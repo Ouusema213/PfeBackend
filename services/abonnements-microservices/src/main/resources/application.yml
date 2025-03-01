@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: abonnements-microservices
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/e_learning_db?createDatabaseIfNotExist=true
+    username: root
+    password:
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8083
