@@ -25,6 +25,7 @@ public class Cours {
     private Date dateCreation;
     private Long duree;
     private String pdf;
+    //test
 
     @ManyToOne
     @JoinColumn(name = "chapitre_id")
