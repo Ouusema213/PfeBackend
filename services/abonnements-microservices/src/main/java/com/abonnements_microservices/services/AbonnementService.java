@@ -41,4 +41,8 @@ public class AbonnementService {
         abonnementRepository.deleteById(id);
         return "Abonnement supprimé avec succès";
     }
+
+    public long countAbonnements() {
+        return abonnementRepository.count();
+    }
 }

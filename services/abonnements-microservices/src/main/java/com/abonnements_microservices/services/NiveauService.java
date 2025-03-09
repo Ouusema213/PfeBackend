@@ -1,5 +1,6 @@
 package com.abonnements_microservices.services;
 
+import com.abonnements_microservices.model.Matiere;
 import com.abonnements_microservices.model.Niveau;
 import com.abonnements_microservices.repo.NiveauRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,13 @@ public class NiveauService {
 
     public void deleteNiveau(Long id) {
         niveauRepository.deleteById(id);
+    }
+    public Niveau updateNiveau(Long id ,Niveau niveau) {
+        return  niveauRepository.save(niveau);
+    }
+
+    public long countNiveaux() {
+        return niveauRepository.count();
     }
 }
 

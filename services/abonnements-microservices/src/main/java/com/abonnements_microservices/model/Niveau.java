@@ -1,5 +1,6 @@
 package com.abonnements_microservices.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -23,7 +24,7 @@ public class Niveau {
     private String nom;
 
     @OneToMany(mappedBy = "niveau", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonManagedReference("niveau-matiere")
+    @JsonIgnoreProperties("niveau")
     private List<Matiere> matieres;
 
     public Long getId() {

@@ -104,4 +104,3 @@ public class Cours {
         this.pdf = pdf;
     }
 }
-

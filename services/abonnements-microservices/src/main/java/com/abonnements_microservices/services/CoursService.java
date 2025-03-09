@@ -52,5 +52,9 @@ public class CoursService {
         return coursRepository.save(cours);
 
     }
+
+    public long countCours() {
+        return coursRepository.count();
+    }
 }
 

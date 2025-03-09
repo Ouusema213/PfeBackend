@@ -27,7 +27,7 @@ public class MatiereController {
         return matiereService.getMatiereById(id);
     }
 
-    @PostMapping("/{abonnementId}")
+    @PostMapping("/abonnement/{abonnementId}")
     public Matiere createMatiere(@RequestBody Matiere matiere, @PathVariable Long abonnementId) {
         return matiereService.createMatiere(matiere, abonnementId);
     }
@@ -44,8 +44,9 @@ public class MatiereController {
 
     @PostMapping("/add")
     public Matiere addMatiere(@RequestBody Matiere matiere) {
-
+        System.out.println("Requête reçue : " + matiere);
         return matiereService.addMatiere(matiere);
     }
+
 }
 

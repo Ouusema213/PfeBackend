@@ -56,11 +56,11 @@ public class Matiere {
 
     @ManyToOne
     @JoinColumn(name = "niveau_id")
-    @JsonBackReference("niveau-matiere")
+    @JsonIgnoreProperties("matieres")
     private Niveau niveau;
 
     @OneToMany(mappedBy = "matiere", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonManagedReference
+    @JsonIgnoreProperties("matieres")
     private List<Chapitre> chapitres;
 
     public List<Chapitre> getChapitres() {

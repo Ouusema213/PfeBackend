@@ -1,5 +1,6 @@
 package com.abonnements_microservices.controller;
 
+
 import com.abonnements_microservices.model.Niveau;
 import com.abonnements_microservices.services.NiveauService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/niveaux")
-
 @CrossOrigin(origins = {"http://localhost:3036", "http://localhost:3000"})
 public class NiveauController {
     @Autowired
@@ -35,5 +35,9 @@ public class NiveauController {
     @DeleteMapping("/{id}")
     public void deleteNiveau(@PathVariable Long id) {
         niveauService.deleteNiveau(id);
+    }
+    @PutMapping("/{id}")
+    public Niveau updateNiveau(@PathVariable Long id,@RequestBody Niveau niveau) {
+        return niveauService.updateNiveau(id, niveau);
     }
 }
